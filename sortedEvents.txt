@@ -1,0 +1,5 @@
+date: 01.03.2024 name: Birthday description: Party
+date: 05.03.2024 name: Concert description: Rock
+date: 10.03.2024 name: Conference description: Conference
+date: 15.04.2024 name: Meeting description: Office
+date: 20.08.2024 name: Vacation description: Family
