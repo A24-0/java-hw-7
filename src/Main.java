@@ -10,16 +10,16 @@ public class Main {
         String outputFileName = "sortedEvents.txt";
 
         //чтение из файла
-        List<Event> events = readEventsFromFile(inputFileName);
+        List<Event> events = readEvents(inputFileName);
 
         //сортировка по дате
         events.sort(comparing(Event::getDate));
 
         //запись отсортированных данных в файл
-        writeEventsToFile(events, outputFileName);
+        writeEvents(events, outputFileName);
     }
 
-    private static List<Event> readEventsFromFile(String fileName) {
+    private static List<Event> readEvents(String fileName) {
         List<Event> events = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -36,7 +36,7 @@ public class Main {
         return events;
     }
 
-    private static void writeEventsToFile(List<Event> events, String fileName) {
+    private static void writeEvents(List<Event> events, String fileName) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             for (Event event : events) {
                 String formattedDate = event.getDate().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy"));
